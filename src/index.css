@@ -29,12 +29,12 @@ body {
     @apply text-lg leading-8 font-normal font-barlowCondensed;
   }
 
-  .nate_text-body-tablet {
-    @apply text-base leading-[1.75] font-normal font-barlowCondensed;
-  }
-
   .nate_text-body-mobile {
     @apply text-[15px] leading-[1.667] font-normal font-barlow text-primaryBlue text-center;
+  }
+
+  .nate_text-body-tablet {
+    @apply text-base leading-[1.75];
   }
 
   .nate_text-desc {
@@ -49,6 +49,10 @@ body {
     @apply text-[150px] font-bellefair font-normal leading-[1.15] uppercase text-primaryWhite text-center;
   }
 
+  .nate_text-heading-1-tablet {
+    @apply text-[150px] leading-none;
+  }
+
   .nate_text-heading-1-mobile {
     @apply text-[80px] font-bellefair font-normal leading-tight text-primaryWhite text-center uppercase;
   }
@@ -59,6 +63,10 @@ body {
 
   .nate_text-heading-2-mobile {
     @apply text-[56px] font-bellefair font-normal leading-primary uppercase;
+  }
+
+  .nate_text-heading-2-tablet {
+    @apply text-[80px];
   }
 
   .nate_text-heading-3 {
@@ -74,35 +82,59 @@ body {
   }
 
   .nate_text-heading-5-mobile {
-    @apply text-base font-normal tracking-primary font-barlowCondensed uppercase text-primaryBlue text-center;
+    @apply text-base font-normal tracking-primary font-barlowCondensed uppercase text-primaryBlue text-center leading-primary;
+  }
+
+  .nate_text-heading-5-tablet {
+    @apply text-xl leading-primary;
   }
 
   .nate_text-heading-crew-name-mobile {
     @apply text-center font-bellefair font-normal text-2xl leading-primary uppercase text-primaryWhite;
   }
 
+  .nate_text-heading-crew-name-tablet {
+    @apply text-[40px] leading-primary;
+  }
+
   .nate_text-heading-crew-role-mobile {
     @apply text-center font-bellefair font-normal text-base leading-primary uppercase opacity-50 text-primaryWhite;
+  }
+
+  .nate_text-heading-crew-role-tablet {
+    @apply text-2xl leading-primary;
+  }
+
+  .nate_text-heading-number-mobile {
+    @apply font-barlowCondensed text-base font-bold leading-primary tracking-primary text-primaryWhite opacity-25;
+  }
+
+  .nate_text-heading-number-tablet {
+    @apply text-xl leading-primary;
   }
 
   .nate_text-heading-technology-term-mobile {
     @apply text-center font-barlowCondensed font-normal text-sm leading-primary uppercase text-primaryBlue tracking-primary;
   }
 
+  .nate_text-heading-technology-term-tablet {
+    @apply text-base leading-primary;
+  }
+
   .nate_text-heading-technology-name-mobile {
     @apply text-center font-bellefair font-normal text-2xl leading-primary uppercase text-primaryWhite;
   }
 
-  .nate_text-heading-number-mobile {
-    @apply font-barlowCondensed text-base font-bold leading-normal tracking-primary text-primaryWhite opacity-25;
+  .nate_text-heading-technology-name-mobile {
+    @apply text-[40px] leading-primary;
   }
 
   .nate_text-nav {
-    @apply font-barlowCondensed text-base tracking-[2.7px] font-normal flex items-center text-primaryWhite uppercase leading-[1.2];
+    @apply font-barlowCondensed text-base tracking-[2.7px] font-normal flex items-center text-primaryWhite uppercase leading-primary;
   }
 
   .nate_text-nav-tablet {
-    @apply text-sm tracking-[2.36px];
+    @apply text-sm leading-primary;
   }
 
   .nate_text-nav-mobile {
@@ -111,6 +143,10 @@ body {
 
   .nate_text-slider-2-mobile {
     @apply text-center font-normal text-base leading-primary tracking-secondary font-bellefair;
+  }
+
+  .nate_text-slider-2-tablet {
+    @apply text-2xl leading-primary;
   }
 
   .nate_text-subheading-1 {
@@ -126,11 +162,15 @@ body {
   }
 
   .nate_text-subheading-2-mobile {
-    @apply font-barlowCondensed text-sm tracking-primary leading-primary uppercase text-center;
+    @apply font-barlowCondensed text-sm tracking-primary leading-primary uppercase text-center text-primaryBlue;
   }
 
   .nate_text-tab-mobile {
-    @apply text-primaryBlue text-sm font-normal font-barlowCondensed tracking-primary leading-normal hover:cursor-pointer uppercase;
+    @apply text-primaryBlue text-sm font-normal font-barlowCondensed tracking-primary leading-primary hover:cursor-pointer uppercase;
+  }
+
+  .nate_text-tab-tablet {
+    @apply text-base leading-primary;
   }
 
   .nate_nav-active {
@@ -150,23 +190,23 @@ body {
   }
 
   .nate_tab-hover {
-    @apply border-b-[3px] border-primaryWhite border-opacity-50;
+    @apply border-b-[3px] pb-2 border-primaryWhite border-opacity-50;
   }
 
   .nate_btn-home {
     @apply flex justify-center tracking-[2px] items-center rounded-full h-[274px] aspect-square text-primaryBlack bg-primaryWhite;
   }
 
-  .nate_btn-home-tablet {
-    @apply h-[242px];
+  .nate_btn-home-mobile {
+    @apply relative flex justify-center items-center rounded-full h-[150px] aspect-square text-primaryBlack bg-primaryWhite text-xl tracking-secondary text-center uppercase leading-normal font-bellefair font-normal;
   }
 
-  .nate_btn-home-mobile {
-    @apply flex justify-center items-center rounded-full h-[150px] aspect-square text-primaryBlack bg-primaryWhite text-xl tracking-secondary text-center uppercase leading-normal font-bellefair font-normal;
+  .nate_btn-home-tablet {
+    @apply h-[242px] text-[32px];
   }
 
   .nate_btn-home-hover {
-    @apply relative before:bg-primaryWhite before:h-[160%] before:aspect-square before:rounded-full before:-z-10 before:absolute before:opacity-10;
+    @apply before:bg-primaryWhite before:h-[160%] before:aspect-square before:rounded-full before:absolute before:opacity-10 before:content-[""] before:-z-10;
   }
 
   .nate_slider-1 {
@@ -197,6 +237,10 @@ body {
     @apply flex bg-transparent border-[1px] border-primaryWhite border-opacity-25 justify-center tracking-[2px] items-center rounded-full h-[40px] aspect-square;
   }
 
+  .nate_slider-2-tablet {
+    @apply h-[60px];
+  }
+
   .nate_slider-2-hover {
     @apply flex bg-transparent border-[1px] border-primaryWhite heading-4 justify-center tracking-[2px] items-center rounded-full h-[80px] aspect-square;
   }
@@ -205,13 +249,5 @@ body {
     @apply bg-primaryWhite text-primaryBlack;
   }
 
-  .nate_nav {
-    @apply h-[96px] bg-primaryWhite bg-opacity-5 backdrop-blur-2xl flex justify-center items-center gap-12;
-  }
-
   /*###########CONTAINERS##########*/
-
-  .nate_nav-container {
-    @apply w-3/4;
-  }
 }

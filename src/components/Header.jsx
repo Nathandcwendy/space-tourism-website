@@ -76,7 +76,7 @@ const Header = () => {
       {menuOpen && (
         <div
           ref={navMobileRef}
-          className="md:hidden fixed inset-0 flex justify-end z-10"
+          className="md:hidden fixed inset-0 flex justify-end z-50"
         >
           <nav
             id="Nav-Mobile"
@@ -124,38 +124,46 @@ const Header = () => {
           </nav>
         </div>
       )}
-      <header className="flex justify-between items-center w-full relative mb-12">
+      <header className="flex justify-between items-center w-full relative mb-12 md:mb-[40px]">
         <div className="lg:mr-16">
           <Link to={"/"}>
-            <img src="/assets/shared/logo.svg" className="w-10 h-10" alt="" />
+            <img
+              src="/assets/shared/logo.svg"
+              className="w-10 h-10 md:w-12 md:h-12"
+              alt=""
+            />
           </Link>
         </div>
         <div
           id="nate_nav-line"
           className="h-[1px] hidden lg:block bg-primaryWhite bg-opacity-25 w-1/3 -mr-[30px] relative z-10"
         ></div>
-        <nav className="hidden md:block nate_nav-container">
-          <ul className="nate_nav">
+        <nav className="hidden relative md:block min-w-[450px] -right-10">
+          <ul className="h-[96px] bg-primaryWhite bg-opacity-5 backdrop-blur-2xl flex justify-center items-center gap-9">
             {pages.map((page, index) =>
               page.link == navState ? (
                 <li className="h-full" key={index}>
                   <Link
-                    to={`/${page.link == "home" ? "" : page.link}`}
+                    to={`/${
+                      page.link == "home" ? "" : `${page.link}/${page.place}`
+                    }`}
                     href="#"
-                    className="nate_text-nav h-full hover:cursor-pointer hover:nate_nav-hover nate_nav-active"
+                    className="nate_text-nav-mobile md:nate_text-nav-tablet h-full hover:cursor-pointer hover:nate_nav-hover nate_nav-active"
                   >
-                    <span className="mr-3 font-bold">{page.number}</span>
+                    <span className="mr-3 font-bold hidden">{page.number}</span>
                     {page.text}
                   </Link>
                 </li>
               ) : (
                 <li className="h-full" key={index}>
                   <Link
-                    to={`/${page.link == "home" ? "" : page.link}`}
+                    to={`/${
+                      page.link == "home" ? "" : `${page.link}/${page.place}`
+                    }`}
                     href="#"
-                    className="nate_text-nav h-full hover:cursor-pointer hover:nate_nav-hover"
+                    className="nate_text-nav-mobile md:nate_text-nav-tablet h-full hover:cursor-pointer hover:nate_nav-hover"
                   >
-                    <span className="mr-3 font-bold">{page.number}</span>
+                    <span className="mr-3 font-bold hidden">{page.number}</span>
                     {page.text}
                   </Link>
                 </li>

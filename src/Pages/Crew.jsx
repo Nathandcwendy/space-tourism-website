@@ -5,7 +5,10 @@ const data = [
   {
     name: "Douglas Hurley",
     images: {
-      png: "./assets/crew/image-douglas-hurley-bitmap.png",
+      png: {
+        mobile: "./assets/crew/image-douglas-hurley-bitmap-mobile.png",
+        tablet: "./assets/crew/image-douglas-hurley-bitmap-tablet.png",
+      },
       webp: "./assets/crew/image-douglas-hurley.webp",
     },
     role: "Commander",
@@ -14,7 +17,10 @@ const data = [
   {
     name: "Mark Shuttleworth",
     images: {
-      png: "./assets/crew/image-mark-shuttleworth-bitmap.png",
+      png: {
+        mobile: "./assets/crew/image-mark-shuttleworth-bitmap-mobile.png",
+        tablet: "./assets/crew/image-mark-shuttleworth-bitmap-tablet.png",
+      },
       webp: "./assets/crew/image-mark-shuttleworth.webp",
     },
     role: "Mission Specialist",
@@ -23,7 +29,10 @@ const data = [
   {
     name: "Victor Glover",
     images: {
-      png: "./assets/crew/image-victor-glover-bitmap.png",
+      png: {
+        mobile: "./assets/crew/image-victor-glover-bitmap-mobile.png",
+        tablet: "./assets/crew/image-victor-glover-bitmap-tablet.png",
+      },
       webp: "./assets/crew/image-victor-glover.webp",
     },
     role: "Pilot",
@@ -32,7 +41,10 @@ const data = [
   {
     name: "Anousheh Ansari",
     images: {
-      png: "./assets/crew/image-anousheh-ansari-bitmap.png",
+      png: {
+        mobile: "./assets/crew/image-anousheh-ansari-bitmap-mobile.png",
+        tablet: "./assets/crew/image-anousheh-ansari-bitmap-tablet.png",
+      },
       webp: "./assets/crew/image-anousheh-ansari.webp",
     },
     role: "Flight Engineer",
@@ -44,7 +56,9 @@ const Crew = () => {
   const { role } = useParams();
   const navigate = useNavigate();
   const person = data.find(
-    (item) => item.role.replace(" ", "").toLowerCase() == role.toLowerCase()
+    (item) =>
+      item.role.replace(" ", "").toLowerCase() ==
+      role.replace(" ", "").toLowerCase()
   );
 
   useEffect(() => {
@@ -56,18 +70,41 @@ const Crew = () => {
   return (
     <>
       {person && (
-        <main className="flex flex-col text-primaryWhite items-center -mt-6">
+        <main className="flex flex-col text-primaryWhite items-center -mt-6 md:mt-0">
           <h1 className="sr-only uppercase">{`${person.role} ${person.name}`}</h1>
-          <div className="flex gap-4 mb-8">
-            <span className="nate_text-heading-number-mobile">02</span>
-            <h2 className="nate_text-heading-5-mobile text-primaryWhite">
+          <div className="flex gap-[18px] md:gap-[19px] mb-8 md:mb-[60px] md:self-start">
+            <span className="nate_text-heading-number-mobile md:nate_text-heading-number-tablet">
+              02
+            </span>
+            <h2 className="nate_text-heading-5-mobile md:nate_text-heading-5-tablet text-primaryWhite">
               Meet Your Crew
             </h2>
           </div>
-          <div className="flex items-center justify-center border-b-[1px] border-primaryLight w-full mb-8">
-            <img src={`../${person.images.png}`} alt={`${person.name} Image`} />
-          </div>
-          <ul className="flex justify-center items-center gap-3 mb-8">
+          {person.name == "Douglas Hurley" ? (
+            <picture className="flex items-center justify-center border-b-[1px] md:border-0 border-primaryLight w-full mb-8 md:mb-0 md:order-last md:h-[532px] md:overflow-y-hidden">
+              <source
+                srcSet={`../${person.images.png.tablet}`}
+                media="(min-width: 768px)"
+              />
+              <img
+                src={`../${person.images.png.mobile}`}
+                alt={`${person.name} Image`}
+                className="md:mt-[137px]"
+              />
+            </picture>
+          ) : (
+            <picture className="flex items-center justify-center border-b-[1px] md:border-0 border-primaryLight w-full mb-8 md:mb-0 md:order-last md:h-[532px] md:overflow-y-hidden ">
+              <source
+                srcSet={`../${person.images.png.tablet}`}
+                media="(min-width: 768px)"
+              />
+              <img
+                src={`../${person.images.png.mobile}`}
+                alt={`${person.name} Image`}
+              />
+            </picture>
+          )}
+          <ul className="flex justify-center items-center gap-3 mb-8 md:order-8 md:mb-10">
             {roles.map((role, index) =>
               role == person.role ? (
                 <Link
@@ -87,14 +124,16 @@ const Crew = () => {
             )}
           </ul>
           <div className="flex flex-col gap-2 items-center mb-4">
-            <h3 className="nate_text-heading-crew-role-mobile">
+            <h3 className="nate_text-heading-crew-role-mobile md:nate_text-heading-crew-role-tablet">
               {person.role}
             </h3>
-            <h4 className="nate_text-heading-crew-name-mobile">
+            <h4 className="nate_text-heading-crew-name-mobile md:nate_text-heading-crew-name-tablet">
               {person.name}
             </h4>
           </div>
-          <p className="nate_text-body-mobile mb-20">{person.bio}</p>
+          <p className="nate_text-body-mobile md:nate_text-body-tablet max-w-[535px] md:h-[84px] md:min-w-[458px] md:max-w-[592px] mb-20 md:mb-10">
+            {person.bio}
+          </p>
         </main>
       )}
     </>
