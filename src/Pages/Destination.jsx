@@ -66,73 +66,79 @@ const Destination = () => {
 
   return (
     <>
-      {console.log(
+      {/* {console.log(
         data.find((item) => item.name.toLowerCase() === place.toLowerCase())
-      )}
+      )} */}
       {planet ? (
-        <main className="text-primaryWhite flex flex-col items-center -mt-6 md:mt-0">
+        <main className="text-primaryWhite flex lg:flex-row flex-col items-center lg:justify-between lg:px-[60px] xl:px-[90px] 2xl:px-[111px] mt-6 md:mt-[40px] lg:mt-[76px] mb-20 md:mb-[62px] lg:mb-[80px] xl:mb-[90px] 2xl:mb-[118px]">
           <h1 className="sr-only">{planet.name}</h1>
-          <div className="flex gap-[18px] md:gap-[19px] mb-8 md:mb-[60px] md:self-start">
-            <span className="nate_text-heading-number-mobile md:nate_text-heading-number-tablet">
-              01
-            </span>
-            <h2 className="nate_text-heading-5-mobile md:nate_text-heading-5-tablet text-primaryWhite">
-              PICK YOUR DESTINATION
-            </h2>
-          </div>
-          <div>
-            <img
-              src={`../${planet.images.webp}`}
-              className="h-[170px] w-[170px] md:h-[300px] md:w-[300px] mb-5 md:mb-[54px]"
-              alt={`${planet.name} image`}
-            />
-          </div>
-          <ul className="flex gap-[26px] md:gap-9 mb-5 md:mb-8 box-border">
-            {tabs.map((tab, index) =>
-              tab == planet.name.toLowerCase() ? (
-                <li key={index}>
-                  <Link to={`/destination/${tab}`}>
-                    <h3 className="nate_text-tab-mobile md:nate_text-tab-tablet nate_tab-active lg:hover:nate_tab-hover box-border">
-                      {tab}
-                    </h3>
-                  </Link>
-                </li>
-              ) : (
-                <li key={index}>
-                  <Link to={`/destination/${tab}`}>
-                    <h3 className="nate_text-tab-mobile md:nate_text-tab-tablet lg:hover:nate_tab-hover box-border">
-                      {tab}
-                    </h3>
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-
-          <h4 className="nate_text-heading-2-mobile md:nate_text-heading-2-tablet md:mb-2">
-            {planet.name}
-          </h4>
-          <p className="nate_text-body-mobile md:nate_text-body-tablet mb-8 md:mb-[50px] max-w-[535px] md:w-[574px]">
-            {planet.description}
-          </p>
-          <div className="h-[1px] w-full md:w-[574px] bg-primaryLight mb-8 md:mb-7"></div>
-          <div className="flex flex-col md:w-[574px] md:justify-center md:flex-row md:mb-[62px] gap-8 md:gap-3 mb-20">
-            <div className="md:flex md:justify-end md:w-full">
-              <div className="flex flex-col gap-3 md:w-[216px]">
-                <span className="nate_text-subheading-2-mobile md:mb-3">
-                  AVG. DISTANCE
-                </span>
-                <p className="nate_text-subheading-1-mobile">
-                  {planet.distance}
-                </p>
-              </div>
+          <div className="flex flex-col items-center w-full lg:w-auto">
+            <div className="flex gap-[18px] md:gap-[19px] mb-8 md:mb-[60px] lg:mb-[75px] xl:mb-[97px] md:self-start">
+              <span className="nate_text-heading-number-mobile md:nate_text-heading-number-tablet lg:nate_text-heading-number-desktop">
+                01
+              </span>
+              <h2 className="nate_text-heading-5-mobile md:nate_text-heading-5-tablet lg:nate_text-heading-5-desktop text-primaryWhite">
+                PICK YOUR DESTINATION
+              </h2>
             </div>
-            <div className="md:flex md:justify-start md:w-full">
-              <div className="flex flex-col gap-3 md:w-[216px]">
-                <span className="nate_text-subheading-2-mobile md:mb-3">
-                  Est. travel time
-                </span>
-                <p className="nate_text-subheading-1-mobile">{planet.travel}</p>
+            <div className="lg:self-start lg:pl-[10px] xl:pl-[20px] 2xl:pl-[37.5px]">
+              <img
+                src={`../${planet.images.webp}`}
+                className="h-[170px] w-[170px] md:h-[300px] md:w-[300px] lg:h-[375px] lg:w-[375px] xl:h-[445px] xl:w-[445px] mb-5 md:mb-[54px]"
+                alt={`${planet.name} image`}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center lg:items-start lg:justify-end">
+            <ul className="flex gap-[26px] md:gap-9 mb-5 md:mb-8 box-border">
+              {tabs.map((tab, index) =>
+                tab == planet.name.toLowerCase() ? (
+                  <li key={index}>
+                    <Link to={`/destination/${tab}`}>
+                      <h3 className="nate_text-tab-mobile md:nate_text-tab-tablet nate_tab-active lg:hover:nate_tab-hover box-border">
+                        {tab}
+                      </h3>
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={index}>
+                    <Link to={`/destination/${tab}`}>
+                      <h3 className="nate_text-tab-mobile md:nate_text-tab-tablet lg:hover:nate_tab-hover box-border">
+                        {tab}
+                      </h3>
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+
+            <h4 className="nate_text-heading-2-mobile md:nate_text-heading-2-tablet lg:nate_text-heading-2-desktop xl:text-[100px] md:mb-2">
+              {planet.name}
+            </h4>
+            <p className="nate_text-body-mobile md:nate_text-body-tablet lg:nate_text-body-desktop mb-8 md:mb-[50px] lg:mb-[54px] max-w-[535px] md:w-[574px] lg:w-[350px] xl:w-[400px] 2xl:w-[444px]">
+              {planet.description}
+            </p>
+            <div className="h-[1px] w-full md:w-[574px] lg:w-[350px] xl:w-[400px] 2xl:w-[444px] bg-primaryLight mb-8 md:mb-7"></div>
+            <div className="flex flex-col md:w-[574px] lg:w-[350px] xl:w-[400px] 2xl:w-[444px] md:justify-center md:flex-row gap-8 md:gap-3 lg:gap-[40px] xl:gap-[50px] ">
+              <div className="md:flex md:justify-end md:w-full lg:justify-start">
+                <div className="flex flex-col gap-3 md:w-[216px] lg:w-auto">
+                  <span className="nate_text-subheading-2-mobile md:mb-3 lg:text-start">
+                    AVG. DISTANCE
+                  </span>
+                  <p className="nate_text-subheading-1-mobile lg:text-start">
+                    {planet.distance}
+                  </p>
+                </div>
+              </div>
+              <div className="md:flex md:justify-start md:w-full">
+                <div className="flex flex-col gap-3 md:w-[216px] lg:w-auto">
+                  <span className="nate_text-subheading-2-mobile md:mb-3 lg:text-start">
+                    Est. travel time
+                  </span>
+                  <p className="nate_text-subheading-1-mobile lg:text-start">
+                    {planet.travel}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

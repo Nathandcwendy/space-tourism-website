@@ -33,7 +33,7 @@ export default {
         "crew-desktop": "url(/assets/crew/background-crew-desktop.jpg)",
         "crew-tablet": "url(/assets/crew/background-crew-tablet.jpg)",
         "crew-mobile": "url(/assets/crew/background-crew-mobile-bitmap.png)",
-        "technology-desktop": "url(../public/assets/technology/Bitmap.jpg)",
+        "technology-desktop": "url(/assets/technology/Bitmap.jpg)",
         "technology-tablet":
           "url(/assets/technology/background-technology-tablet.jpg)",
         "technology-mobile":
@@ -47,7 +47,17 @@ export default {
         "2.5xl": "28px",
       },
       screens: {
-        lg: "1024px",
+        // lg: "1024px",
+        "2xl": "1440px",
+        tall: {
+          raw: "(min-height: 800px)",
+        },
+        taller: {
+          raw: "(min-height: 900px)",
+        },
+        tallest: {
+          raw: "(min-height: 1180px)",
+        },
       },
       lineHeight: {
         primary: 1.15,

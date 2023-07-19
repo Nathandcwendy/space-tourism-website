@@ -29,6 +29,10 @@ body {
     @apply text-lg leading-8 font-normal font-barlowCondensed;
   }
 
+  .nate_text-body-desktop {
+    @apply text-lg leading-[1.75] text-start;
+  }
+
   .nate_text-body-mobile {
     @apply text-[15px] leading-[1.667] font-normal font-barlow text-primaryBlue text-center;
   }
@@ -49,16 +53,20 @@ body {
     @apply text-[150px] font-bellefair font-normal leading-[1.15] uppercase text-primaryWhite text-center;
   }
 
-  .nate_text-heading-1-tablet {
-    @apply text-[150px] leading-none;
-  }
-
   .nate_text-heading-1-mobile {
     @apply text-[80px] font-bellefair font-normal leading-tight text-primaryWhite text-center uppercase;
   }
 
+  .nate_text-heading-1-tablet {
+    @apply text-[150px] leading-none;
+  }
+
   .nate_text-heading-2 {
     @apply text-[100px] font-bellefair font-normal leading-primary uppercase;
+  }
+
+  .nate_text-heading-2-desktop {
+    @apply text-[80px];
   }
 
   .nate_text-heading-2-mobile {
@@ -81,12 +89,24 @@ body {
     @apply text-2.5xl font-normal tracking-primary font-barlowCondensed uppercase text-primaryBlue;
   }
 
+  .nate_text-heading-5-desktop {
+    @apply text-2.5xl leading-primary;
+  }
+
+  .nate_text-heading-5-desktop {
+    @apply text-2.5xl leading-primary;
+  }
+
   .nate_text-heading-5-mobile {
     @apply text-base font-normal tracking-primary font-barlowCondensed uppercase text-primaryBlue text-center leading-primary;
   }
 
   .nate_text-heading-5-tablet {
     @apply text-xl leading-primary;
+  }
+
+  .nate_text-heading-crew-name-desktop {
+    @apply text-[56px] leading-primary;
   }
 
   .nate_text-heading-crew-name-mobile {
@@ -97,12 +117,20 @@ body {
     @apply text-[40px] leading-primary;
   }
 
+  .nate_text-heading-crew-role-desktop {
+    @apply text-[32px] leading-primary;
+  }
+
   .nate_text-heading-crew-role-mobile {
     @apply text-center font-bellefair font-normal text-base leading-primary uppercase opacity-50 text-primaryWhite;
   }
 
   .nate_text-heading-crew-role-tablet {
     @apply text-2xl leading-primary;
+  }
+
+  .nate_text-heading-number-desktop {
+    @apply text-2.5xl leading-primary;
   }
 
   .nate_text-heading-number-mobile {
@@ -121,16 +149,24 @@ body {
     @apply text-base leading-primary;
   }
 
+  .nate_text-heading-technology-name-desktop {
+    @apply text-[56px] leading-primary;
+  }
+
   .nate_text-heading-technology-name-mobile {
     @apply text-center font-bellefair font-normal text-2xl leading-primary uppercase text-primaryWhite;
   }
 
-  .nate_text-heading-technology-name-mobile {
+  .nate_text-heading-technology-name-tablet {
     @apply text-[40px] leading-primary;
   }
 
   .nate_text-nav {
     @apply font-barlowCondensed text-base tracking-[2.7px] font-normal flex items-center text-primaryWhite uppercase leading-primary;
+  }
+
+  .nate_text-nav-desktop {
+    @apply text-base leading-primary;
   }
 
   .nate_text-nav-tablet {
@@ -139,6 +175,10 @@ body {
 
   .nate_text-nav-mobile {
     @apply font-barlowCondensed text-base tracking-primary font-normal flex items-center text-primaryWhite uppercase leading-normal hover:cursor-pointer;
+  }
+
+  .nate_text-slider-2-desktop {
+    @apply text-[32px] leading-primary;
   }
 
   .nate_text-slider-2-mobile {
@@ -197,6 +237,10 @@ body {
     @apply flex justify-center tracking-[2px] items-center rounded-full h-[274px] aspect-square text-primaryBlack bg-primaryWhite;
   }
 
+  .nate_btn-home-desktop {
+    @apply h-[274px] text-[32px];
+  }
+
   .nate_btn-home-mobile {
     @apply relative flex justify-center items-center rounded-full h-[150px] aspect-square text-primaryBlack bg-primaryWhite text-xl tracking-secondary text-center uppercase leading-normal font-bellefair font-normal;
   }
@@ -211,6 +255,10 @@ body {
 
   .nate_slider-1 {
     @apply w-[15px] bg-primaryWhite bg-opacity-[0.17] aspect-square rounded-full;
+  }
+
+  .nate_slider-1-desktop {
+    @apply w-[15px];
   }
 
   .nate_slider-1-mobile {
@@ -229,8 +277,8 @@ body {
     @apply bg-opacity-100;
   }
 
-  .nate_slider-2 {
-    @apply flex bg-transparent border-[1px] border-primaryWhite border-opacity-25 justify-center tracking-[2px] items-center rounded-full h-[80px] aspect-square;
+  .nate_slider-2-desktop {
+    @apply h-[70px];
   }
 
   .nate_slider-2-mobile {

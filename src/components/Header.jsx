@@ -124,8 +124,8 @@ const Header = () => {
           </nav>
         </div>
       )}
-      <header className="flex justify-between items-center w-full relative mb-12 md:mb-[40px]">
-        <div className="lg:mr-16">
+      <header className="flex justify-between items-center w-full relative">
+        <div>
           <Link to={"/"}>
             <img
               src="/assets/shared/logo.svg"
@@ -136,10 +136,10 @@ const Header = () => {
         </div>
         <div
           id="nate_nav-line"
-          className="h-[1px] hidden lg:block bg-primaryWhite bg-opacity-25 w-1/3 -mr-[30px] relative z-10"
+          className="h-[1px] hidden xl:block bg-primaryWhite bg-opacity-25 w-[473px] absolute z-10 left-[112px]"
         ></div>
-        <nav className="hidden relative md:block min-w-[450px] -right-10">
-          <ul className="h-[96px] bg-primaryWhite bg-opacity-5 backdrop-blur-2xl flex justify-center items-center gap-9">
+        <nav className="hidden relative md:block min-w-[450px] xl:w-[760px] 2xl:w-[830px] md:-right-10 2xl:-right-[55px]">
+          <ul className="h-[96px] bg-primaryWhite bg-opacity-5 backdrop-blur-2xl flex justify-center items-center gap-9 lg:gap-11 2xl:gap-[50px] lg:pl-[100px] lg:pr-[120px] 2xl:pl-[123px] 2xl:pr-[167px]">
             {pages.map((page, index) =>
               page.link == navState ? (
                 <li className="h-full" key={index}>
@@ -148,9 +148,11 @@ const Header = () => {
                       page.link == "home" ? "" : `${page.link}/${page.place}`
                     }`}
                     href="#"
-                    className="nate_text-nav-mobile md:nate_text-nav-tablet h-full hover:cursor-pointer hover:nate_nav-hover nate_nav-active"
+                    className="nate_text-nav-mobile md:nate_text-nav-tablet lg:nate_text-nav-desktop h-full hover:cursor-pointer hover:nate_nav-hover nate_nav-active"
                   >
-                    <span className="mr-3 font-bold hidden">{page.number}</span>
+                    <span className="mr-3 2xl:mr-[14px] font-bold hidden lg:inline-block">
+                      {page.number}
+                    </span>
                     {page.text}
                   </Link>
                 </li>
@@ -163,7 +165,9 @@ const Header = () => {
                     href="#"
                     className="nate_text-nav-mobile md:nate_text-nav-tablet h-full hover:cursor-pointer hover:nate_nav-hover"
                   >
-                    <span className="mr-3 font-bold hidden">{page.number}</span>
+                    <span className="mr-3 2xl:mr-[14px] font-bold hidden lg:inline-block">
+                      {page.number}
+                    </span>
                     {page.text}
                   </Link>
                 </li>
