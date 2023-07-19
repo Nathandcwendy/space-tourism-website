@@ -49,7 +49,7 @@ const Technology = () => {
   return (
     <>
       {technology && (
-        <main className="text-primaryWhite flex lg:flex-row flex-col items-center lg:w-screen lg:mx-auto lg:max-w-[1440px] lg:justify-between mt-6 md:mt-[40px] lg:mt-[76px] lg:relative lg:-left-10 lg:pl-[100px] xl:pl-[130px] 2xl:pl-[151px]">
+        <main className="text-primaryWhite flex lg:flex-row flex-col items-center lg:w-screen lg:mx-auto lg:max-w-[1440px] lg:justify-between mt-6 md:mt-[40px] lg:mt-[76px] lg:relative lg:-left-10 lg:pl-[100px] xl:pl-[130px] 2xl:pl-[151px] lg:mb-14">
           <div className="flex flex-col items-center lg:items-start w-full">
             <h1 className="sr-only">{technology.name}</h1>
             <div className="flex gap-[18px] md:gap-[19px] mb-8 md:mb-[60px] lg:mb-[90px] xl:mb-[120px] 2xl:mb-[137px] md:self-start">
