@@ -53,7 +53,7 @@ const Header = () => {
         setNavState("missing");
         break;
       default:
-        setNavState("home");
+        setNavState("missing");
         break;
     }
   }, [location, setNavState]);
